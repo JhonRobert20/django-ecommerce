@@ -1,6 +1,7 @@
 import uuid
 
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -23,3 +24,17 @@ class Directions(models.Model):
 
     def __str__(self):
         return f"Direction for {self.client.user.first_name} {self.client.user.last_name}"
+
+    def clean(self):
+        if (
+            self.is_principal
+            and Directions.objects.filter(client=self.client, is_principal=True)
+            .exclude(id=self.id)
+            .exists()
+        ):
+            raise ValidationError("A client can only have one principal address.")
+
+
+def save(self, *args, **kwargs):
+    self.clean()
+    super().save(*args, **kwargs)
