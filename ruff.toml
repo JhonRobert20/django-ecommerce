@@ -1,6 +1,6 @@
 
 # Allow lines to be as long as 120.
-line-length = 80
+line-length = 90
 indent-width = 4
 
 [format]
