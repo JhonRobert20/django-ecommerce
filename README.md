@@ -46,7 +46,7 @@ docker-compose up -d
 Create a new superuser:
 
 ```bash
-$ docker-compose run web python manage.py createsuperuser
+$ docker compose run web python manage.py createsuperuser
 ```
 
 Link to http://localhost:8000/web/admin/ and log in!
