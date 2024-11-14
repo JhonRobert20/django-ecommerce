@@ -1,6 +1,6 @@
 from django.contrib.admin import ModelAdmin, register
 
-from clients.models import Client, Directions
+from clients.models import Client, Direction
 
 
 @register(Client)
@@ -8,6 +8,6 @@ class ClientAdmin(ModelAdmin):
     pass
 
 
-@register(Directions)
+@register(Direction)
 class DirectionAdmin(ModelAdmin):
     pass
