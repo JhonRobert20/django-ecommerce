@@ -1,5 +1,3 @@
-
-# Allow lines to be as long as 120.
 line-length = 90
 indent-width = 4
 
@@ -7,6 +5,7 @@ indent-width = 4
 docstring-code-format = true
 docstring-code-line-length = 60
 quote-style = "double"
+
 [lint]
 select = ["E", "F", "UP", "B", "SIM", "I"]
 extend-fixable = ["B"]
