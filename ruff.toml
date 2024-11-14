@@ -11,6 +11,7 @@ quote-style = "double"
 select = ["E", "F", "UP", "B", "SIM", "I"]
 extend-fixable = ["B"]
 extend-select = ["I"]
+exclude = ["*.pyi", "*tests/*", "*migrations/*"]
 
 [analyze]
 detect-string-imports = true
