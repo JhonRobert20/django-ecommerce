@@ -16,7 +16,7 @@ class Client(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 
-class Directions(models.Model):
+class Direction(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     direction = models.CharField(max_length=500)
@@ -32,7 +32,7 @@ class Directions(models.Model):
     def clean(self):
         if (
             self.is_principal
-            and Directions.objects.filter(client=self.client, is_principal=True)
+            and Direction.objects.filter(client=self.client, is_principal=True)
             .exclude(id=self.id)
             .exists()
         ):
