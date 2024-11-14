@@ -6,11 +6,9 @@ indent-width = 4
 [format]
 docstring-code-format = true
 docstring-code-line-length = 60
+quote-style = "double"
 [lint]
-# Selección de reglas
 select = ["E", "F", "UP", "B", "SIM", "I"]
-
-# Configuración adicional
 extend-fixable = ["B"]
 extend-select = ["I"]
 
