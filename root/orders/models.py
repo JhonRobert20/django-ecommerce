@@ -24,7 +24,7 @@ class OrderState(Model):
 class Order(Model):
     id = UUIDField(primary_key=True, default=uuid4, editable=False)
     client = ForeignKey(Client, on_delete=SET_NULL)
-    total = FloatField(required=True, blank=False)
+    total = FloatField(null=False, blank=False)
     date = DateTimeField()
     order_state = ForeignKey(OrderState)
 
@@ -32,8 +32,8 @@ class Order(Model):
 class OrderDetail(Model):
     order = OneToOneField(Order, on_delete=CASCADE)
     product = ForeignKey(Product, on_delete=SET_NULL, blank=False)
-    unit_price = FloatField(required=True)
-    amount = IntegerField(required=True)
+    unit_price = FloatField(null=False)
+    amount = IntegerField(null=False)
 
 
 class Payment(Model):

@@ -8,7 +8,7 @@ class Client(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    email = models.EmailField(required=True, unique=True)
+    email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
     phone_extension = models.CharField(max_length=5, blank=True, null=True)
 
