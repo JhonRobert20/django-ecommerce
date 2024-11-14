@@ -1,6 +1,6 @@
 from uuid import uuid4
 
-from client.models import Client
+from clients.models import Client
 from django.db.models import (
     CASCADE,
     SET_NULL,
