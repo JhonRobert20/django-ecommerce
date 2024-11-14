@@ -26,7 +26,7 @@ class Order(Model):
     client = ForeignKey(Client, on_delete=SET_NULL)
     total = FloatField(null=False, blank=False)
     date = DateTimeField()
-    order_state = ForeignKey(OrderState)
+    order_state = ForeignKey(OrderState, on_delete=SET_NULL)
 
 
 class OrderDetail(Model):
